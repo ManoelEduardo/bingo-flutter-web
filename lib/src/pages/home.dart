@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   final _homeController = Homecontroller();
 
   shuffler() {
-    if (_homeController.numbers.length < 75) {
+    if (_homeController.drawnNumbers.length < 75) {
       _homeController.startGameBallAnimation();
     } else {
       _showMyDialog();

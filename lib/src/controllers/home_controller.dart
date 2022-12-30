@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class Homecontroller {
-  final List<int> numbers = [];
+  final List<int> drawnNumbers = [];
   ValueNotifier<List<int>> letterBNumbers = ValueNotifier([]);
   ValueNotifier<List<int>> letterINumbers = ValueNotifier([]);
   ValueNotifier<List<int>> letterNNumbers = ValueNotifier([]);
@@ -17,15 +17,15 @@ class Homecontroller {
   numbersRaffle() {
     int drawnNumber = Random().nextInt(75) + 1;
 
-    if (!numbers.contains(drawnNumber)) {
-      numbers.add(drawnNumber);
+    if (!drawnNumbers.contains(drawnNumber)) {
+      drawnNumbers.add(drawnNumber);
     } else {
       numbersRaffle();
     }
   }
 
   lastDrawnNumberAndLetterAssignment() {
-    lastNumberDrawn.value = numbers.toList().last;
+    lastNumberDrawn.value = drawnNumbers.toList().last;
     if (lastNumberDrawn.value <= 15) {
       letter = 'B';
       addingNumbersToEachLetter(letterBNumbers, lastNumberDrawn);
@@ -63,7 +63,7 @@ class Homecontroller {
 
   clearingGameData() {
     isEnabledButton.value = false;
-    numbers.clear();
+    drawnNumbers.clear();
     letter = "";
     lastNumberDrawn.value = 0;
     letterBNumbers.value = [];
