@@ -4,6 +4,8 @@
 
 ### Created in Flutter: 3.0.2
 
+- [Project demo link](https://manoeleduardo.github.io/bingo-flutter-web/#/)
+
 ![Sem título](https://user-images.githubusercontent.com/66228224/210012002-85e12ae7-db40-4cfc-b2e9-31fcc8350286.png)
 
 ## Getting Started
