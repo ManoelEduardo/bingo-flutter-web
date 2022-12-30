@@ -37,8 +37,8 @@ class _BallDrawnState extends State<BallDrawn>
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
-            width: 150,
-            height: 150,
+            width: 180,
+            height: 180,
             decoration: const BoxDecoration(
               color: Colors.deepPurple, // border color
               shape: BoxShape.circle,
@@ -50,7 +50,7 @@ class _BallDrawnState extends State<BallDrawn>
                     ? const Center(
                         child: Icon(
                         Icons.star_border_outlined,
-                        size: 80,
+                        size: 100,
                         color: Colors.white,
                       ))
                     : Column(

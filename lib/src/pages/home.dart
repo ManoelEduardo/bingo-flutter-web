@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: const Color(0xFFedede9),
       appBar: AppBar(
@@ -37,8 +38,9 @@ class _HomePageState extends State<HomePage> {
               onPressed: _homeController.clearingGameData)
         ],
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ValueListenableBuilder<int>(
               valueListenable: _homeController.lastNumberDrawn,
@@ -53,82 +55,99 @@ class _HomePageState extends State<HomePage> {
             ValueListenableBuilder<bool>(
               valueListenable: _homeController.isEnabledButton,
               builder: (context, value, _) {
-                return ElevatedButton(
-                  onPressed: value ? () {} : shuffler,
-                  child: const Text("Sortear números"),
+                return SizedBox(
+                  height: 50,
+                  child: ElevatedButton(
+                    onPressed: value ? () {} : shuffler,
+                    style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25),
+                      ),
+                      elevation: 15.0,
+                    ),
+                    child: const Text("Sortear números"),
+                  ),
                 );
               },
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: SizedBox(
-                  height: 350,
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15.0),
-                    ),
-                    child: Column(
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
-                          child: Text(
-                            "Números que já saíram",
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8, 20, 8, 0),
+              child: SizedBox(
+                //width: size.width > 1340 ? size.width * 68 / 100 : size.width,
+                width: size.width > 1340 ? size.width * 80 / 100 : size.width,
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  child: Column(
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+                        child: Text(
+                          "Números que já saíram",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: GridView(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          gridDelegate:
+                              SliverGridDelegateWithMaxCrossAxisExtent(
+                            maxCrossAxisExtent: size.width > 1580 ? 300 : 250,
+                            mainAxisSpacing: 10.0,
+                            crossAxisSpacing: 10.0,
+                            mainAxisExtent: 250.0,
+                          ),
+                          children: [
+                            ValueListenableBuilder<List<int>>(
+                              valueListenable: _homeController.letterBNumbers,
+                              builder: (context, value, _) {
+                                return ShowDrawnNumbers(
+                                    letter: 'B', numbers: value);
+                              },
                             ),
-                          ),
+                            ValueListenableBuilder<List<int>>(
+                              valueListenable: _homeController.letterINumbers,
+                              builder: (context, value, _) {
+                                return ShowDrawnNumbers(
+                                    letter: 'I', numbers: value);
+                              },
+                            ),
+                            ValueListenableBuilder<List<int>>(
+                              valueListenable: _homeController.letterNNumbers,
+                              builder: (context, value, _) {
+                                return ShowDrawnNumbers(
+                                    letter: 'N', numbers: value);
+                              },
+                            ),
+                            ValueListenableBuilder<List<int>>(
+                              valueListenable: _homeController.letterGNumbers,
+                              builder: (context, value, _) {
+                                return ShowDrawnNumbers(
+                                    letter: 'G', numbers: value);
+                              },
+                            ),
+                            ValueListenableBuilder<List<int>>(
+                              valueListenable: _homeController.letterONumbers,
+                              builder: (context, value, _) {
+                                return ShowDrawnNumbers(
+                                    letter: 'O', numbers: value);
+                              },
+                            ),
+                          ],
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Row(
-                            children: [
-                              ValueListenableBuilder<List<int>>(
-                                valueListenable: _homeController.letterBNumbers,
-                                builder: (context, value, _) {
-                                  return ShowDrawnNumbers(
-                                      letter: 'B', numbers: value);
-                                },
-                              ),
-                              ValueListenableBuilder<List<int>>(
-                                valueListenable: _homeController.letterINumbers,
-                                builder: (context, value, _) {
-                                  return ShowDrawnNumbers(
-                                      letter: 'I', numbers: value);
-                                },
-                              ),
-                              ValueListenableBuilder<List<int>>(
-                                valueListenable: _homeController.letterNNumbers,
-                                builder: (context, value, _) {
-                                  return ShowDrawnNumbers(
-                                      letter: 'N', numbers: value);
-                                },
-                              ),
-                              ValueListenableBuilder<List<int>>(
-                                valueListenable: _homeController.letterGNumbers,
-                                builder: (context, value, _) {
-                                  return ShowDrawnNumbers(
-                                      letter: 'G', numbers: value);
-                                },
-                              ),
-                              ValueListenableBuilder<List<int>>(
-                                valueListenable: _homeController.letterONumbers,
-                                builder: (context, value, _) {
-                                  return ShowDrawnNumbers(
-                                      letter: 'O', numbers: value);
-                                },
-                              ),
-                            ],
-                          ),
-                        ),
-                        const Text(
-                          'Os números do BINGO são de 1 a 75',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        )
-                      ],
-                    ),
+                      ),
+                      const Text(
+                        'Os números do BINGO são de 1 a 75',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(height: 15.0)
+                    ],
                   ),
                 ),
               ),
