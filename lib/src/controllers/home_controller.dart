@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class Homecontroller {
-  final List<int> drawnNumbers = [];
+  List<int> drawnNumbers = [];
   ValueNotifier<List<int>> letterBNumbers = ValueNotifier([]);
   ValueNotifier<List<int>> letterINumbers = ValueNotifier([]);
   ValueNotifier<List<int>> letterNNumbers = ValueNotifier([]);
