@@ -32872,9 +32872,9 @@ L(a,b){var s,r,q=null,p=A.XI(this.c,B.Hc),o=this.d,n=o.length,m=J.a8y(n,t.cl)
 for(s=0;s<n;++s)m[s]=new A.zL(A.qO(q,new A.mP(B.U,q,q,A.XI(A.e(o[s]),B.t6),q),B.k,q,50,q,q,50),q)
 o=A.a9M(m,!0,!0,!0)
 r=m.length
-return A.zV(A.a([p,A.lL(A.a7V(new A.cP(B.aw,new A.rs(new A.WZ(4,4,4,1),o,B.xE,B.at,!1,q,!0,B.tv,!1,q,r,B.aD,B.rx,q,B.a6,q),q),B.eZ,q),200,200)],t.E),B.bU,B.cc,B.cd)}}
+return A.zV(A.a([p,A.lL(A.a7V(new A.cP(B.aw,new A.rs(new A.WZ(4,4,4,1),o,B.xE,B.at,!1,q,!0,B.tv,!1,q,r,B.aD,B.rx,q,B.a6,q),q),B.eZ,q),250,200)],t.E),B.bU,B.cc,B.cd)}}
 A.B8.prototype={
-Fu(){var s=B.uK.YB(75)+1,r=this.a
+Fu(){var s=B.uK.YB(90)+1,r=this.a
 if(!B.b.t(r,s))r.push(s)
 else this.Fu()},
 lH(a,b){var s=A.ee(a.a,!0,t.S)
@@ -32907,10 +32907,10 @@ r=q.a
 r=A.a(r.slice(0),A.ac(r))
 s.sp(0,B.b.gI(r))
 r=s.a
-if(r<=15){q.y="B"
-q.lH(q.b,s)}else if(r<=30){q.y="I"
-q.lH(q.c,s)}else if(r<=45){q.y="N"
-q.lH(q.d,s)}else if(r>45&&r<=60){q.y="G"
+if(r<=18){q.y="B"
+q.lH(q.b,s)}else if(r<=36){q.y="I"
+q.lH(q.c,s)}else if(r<=54){q.y="N"
+q.lH(q.d,s)}else if(r>54&&r<=72){q.y="G"
 q.lH(q.e,s)}else{q.y="O"
 q.lH(q.f,s)}}q.w.sp(0,0)
 p.sp(0,!1)},
@@ -32920,7 +32920,7 @@ ar(){var s=t.t,r=A.a([],s),q=A.a([],s),p=$.bp()
 return new A.wl(new A.B8(r,new A.cF(q,p),new A.cF(A.a([],s),p),new A.cF(A.a([],s),p),new A.cF(A.a([],s),p),new A.cF(A.a([],s),p),new A.cF(0,p),new A.cF(0,p),new A.cF(!1,p)),B.n)}}
 A.wl.prototype={
 HP(){var s=this.d
-if(s.a.length<75)s.nD()
+if(s.a.length<90)s.nD()
 else this.u2()},
 L(a,b){var s,r,q,p=null,o=b.T(t.w).f,n=this.d,m=t.E,l=A.a([A.a4P(p,B.y4,p,n.gVw(),p)],m),k=A.m2(new A.a_K(this),n.r,t.S),j=A.m2(new A.a_L(this),n.x,t.y)
 o=o.a.a
@@ -32929,7 +32929,7 @@ r=A.qp(15)
 o=o>1580?300:250
 q=t.eH
 q=A.a9M(A.a([A.m2(new A.a_M(),n.b,q),A.m2(new A.a_N(),n.c,q),A.m2(new A.a_O(),n.d,q),A.m2(new A.a_P(),n.e,q),A.m2(new A.a_Q(),n.f,q)],m),!0,!0,!0)
-return new A.uI(new A.qj(B.I1,l,!0,new A.I0(p,p,1/0,56),p),A.ak6(A.zV(A.a([k,j,new A.cP(B.xF,A.lL(A.a7V(A.zV(A.a([B.Cv,new A.cP(B.aw,new A.rs(new A.X_(o,10,10,250),q,p,B.at,!1,p,!0,B.Cj,!0,p,5,B.aD,B.rx,p,B.a6,p),p),B.I0,B.Eg],m),B.bU,B.cc,B.cd),p,new A.cl(r,B.q)),p,s),p)],m),B.bU,B.eX,B.cd)),B.x_,p)},
+return new A.uI(new A.qj(B.I1,l,!0,new A.I0(p,p,1/0,56),p),A.ak6(A.zV(A.a([k,j,new A.cP(B.xF,A.lL(A.a7V(A.zV(A.a([B.Cv,new A.cP(B.aw,new A.rs(new A.X_(o,10,10,290),q,p,B.at,!1,p,!0,B.Cj,!0,p,5,B.aD,B.rx,p,B.a6,p),p),B.I0,B.Eg],m),B.bU,B.cc,B.cd),p,new A.cl(r,B.q)),p,s),p)],m),B.bU,B.eX,B.cd)),B.x_,p)},
 u2(){var s=0,r=A.a7(t.H),q,p=this,o,n,m
 var $async$u2=A.a8(function(a,b){if(a===1)return A.a4(b,r)
 while(true)switch(s){case 0:m=p.c
@@ -58565,7 +58565,7 @@ B.FB=new A.m(!0,B.k,null,".SF UI Text",null,null,null,null,null,null,null,null,n
 B.HY=new A.da(B.F1,B.GH,B.GU,B.Hy,B.Gg,B.Fo,B.GO,B.Gj,B.Gr,B.Hg,B.Fy,B.HD,B.Gb,B.H7,B.FB)
 B.HZ=new A.vr(1,"longestLine")
 B.I_=new A.eU("Aten\xe7\xe3o",null,null,null)
-B.I0=new A.eU("Os n\xfameros do BINGO s\xe3o de 1 a 75",null,B.t5,null)
+B.I0=new A.eU("Os n\xfameros do BINGO s\xe3o de 1 a 90",null,B.t5,null)
 B.I1=new A.eU("BINGO",null,null,null)
 B.I2=new A.eU("Sortear n\xfameros",null,null,null)
 B.I4=new A.eU("OK",null,null,null)

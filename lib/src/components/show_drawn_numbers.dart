@@ -22,7 +22,7 @@ class ShowDrawnNumbers extends StatelessWidget {
         ),
         SizedBox(
           width: 200,
-          height: 200,
+          height: 250,
           child: Card(
             color: Colors.deepPurple,
             child: Padding(

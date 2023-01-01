@@ -15,7 +15,7 @@ class Homecontroller {
   String letter = "";
 
   numbersRaffle() {
-    int drawnNumber = Random().nextInt(75) + 1;
+    int drawnNumber = Random().nextInt(90) + 1;
 
     if (!drawnNumbers.contains(drawnNumber)) {
       drawnNumbers.add(drawnNumber);
@@ -26,16 +26,16 @@ class Homecontroller {
 
   lastDrawnNumberAndLetterAssignment() {
     lastNumberDrawn.value = drawnNumbers.toList().last;
-    if (lastNumberDrawn.value <= 15) {
+    if (lastNumberDrawn.value <= 18) {
       letter = 'B';
       addingNumbersToEachLetter(letterBNumbers, lastNumberDrawn);
-    } else if (lastNumberDrawn.value > 15 && lastNumberDrawn.value <= 30) {
+    } else if (lastNumberDrawn.value > 18 && lastNumberDrawn.value <= 36) {
       letter = 'I';
       addingNumbersToEachLetter(letterINumbers, lastNumberDrawn);
-    } else if (lastNumberDrawn.value > 30 && lastNumberDrawn.value <= 45) {
+    } else if (lastNumberDrawn.value > 36 && lastNumberDrawn.value <= 54) {
       letter = 'N';
       addingNumbersToEachLetter(letterNNumbers, lastNumberDrawn);
-    } else if (lastNumberDrawn.value > 45 && lastNumberDrawn.value <= 60) {
+    } else if (lastNumberDrawn.value > 54 && lastNumberDrawn.value <= 72) {
       letter = 'G';
       addingNumbersToEachLetter(letterGNumbers, lastNumberDrawn);
     } else {

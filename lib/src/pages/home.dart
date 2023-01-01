@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   final _homeController = Homecontroller();
 
   shuffler() {
-    if (_homeController.drawnNumbers.length < 75) {
+    if (_homeController.drawnNumbers.length < 90) {
       _homeController.startGameBallAnimation();
     } else {
       _showMyDialog();
@@ -101,7 +101,7 @@ class _HomePageState extends State<HomePage> {
                             maxCrossAxisExtent: size.width > 1580 ? 300 : 250,
                             mainAxisSpacing: 10.0,
                             crossAxisSpacing: 10.0,
-                            mainAxisExtent: 250.0,
+                            mainAxisExtent: 290.0,
                           ),
                           children: [
                             ValueListenableBuilder<List<int>>(
@@ -143,7 +143,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       const Text(
-                        'Os números do BINGO são de 1 a 75',
+                        'Os números do BINGO são de 1 a 90',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 15.0)
