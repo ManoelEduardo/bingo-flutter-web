@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class Homecontroller extends ChangeNotifier {
+class Homecontroller {
   List<int> drawnNumbers = [];
   ValueNotifier<List<int>> letterBNumbers = ValueNotifier([]);
   ValueNotifier<List<int>> letterINumbers = ValueNotifier([]);
